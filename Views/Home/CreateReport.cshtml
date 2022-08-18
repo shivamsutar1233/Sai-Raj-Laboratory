@@ -1,0 +1,124 @@
+﻿@model Sai_Raj_Laboratory.Models.Report
+
+@{
+    ViewData["Title"] = "CreateReport";
+}
+
+<h1>CreateReport</h1>
+
+<h4>Report</h4>
+<hr />
+<div>
+    <form asp-action="CreateReport">
+
+        <div class="form-row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="PatientId" class="control-label"></label>
+            <input asp-for="PatientId" class="form-control" />
+            <span asp-validation-for="PatientId" class="text-danger"></span>
+        </div>*@
+            <div class="form-group col-md-6">
+                <label asp-for="PatientName" class="control-label"></label>
+                <input asp-for="PatientName" class="form-control" />
+                <span asp-validation-for="PatientName" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="UHID" class="control-label"></label>
+                <input asp-for="UHID" class="form-control" />
+                <span asp-validation-for="UHID" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="PatientAge" class="control-label"></label>
+                <input asp-for="PatientAge" class="form-control" />
+                <span asp-validation-for="PatientAge" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="PatientSex" class="control-label"></label>
+                @Html.DropDownListFor(model => model.PatientSex, new SelectList(ViewBag.GenderList), "Select Gender", new { @class = "form-control" })
+                <span asp-validation-for="PatientSex" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientHB" class="control-label"></label>
+                <input asp-for="PatientHB" class="form-control" />
+                <span asp-validation-for="PatientHB" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientWBC" class="control-label"></label>
+                <input asp-for="PatientWBC" class="form-control" />
+                <span asp-validation-for="PatientWBC" class="text-danger"></span>
+            </div>
+            <div class="form-groupcol-md-3">
+                <label asp-for="PatientNeutrophils" class="control-label"></label>
+                <input asp-for="PatientNeutrophils" class="form-control" />
+                <span asp-validation-for="PatientNeutrophils" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PateintLymphocytes" class="control-label"></label>
+                <input asp-for="PateintLymphocytes" class="form-control" />
+                <span asp-validation-for="PateintLymphocytes" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PateintEosinophils" class="control-label"></label>
+                <input asp-for="PateintEosinophils" class="form-control" />
+                <span asp-validation-for="PateintEosinophils" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientMonocytes" class="control-label"></label>
+                <input asp-for="PatientMonocytes" class="form-control" />
+                <span asp-validation-for="PatientMonocytes" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientBasophils" class="control-label"></label>
+                <input asp-for="PatientBasophils" class="form-control" />
+                <span asp-validation-for="PatientBasophils" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientPlateletesCount" class="control-label"></label>
+                <input asp-for="PatientPlateletesCount" class="form-control" />
+                <span asp-validation-for="PatientPlateletesCount" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientWBCStatus" class="control-label"></label>
+                @Html.DropDownListFor(model => model.PatientWBCStatus, new SelectList(ViewBag.WBCStatuses), "Select WBC Status", new { @class = "form-control" })
+                <span asp-validation-for="PatientWBCStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientRBCStatus" class="control-label"></label>
+                @Html.DropDownListFor(model => model.PatientRBCStatus, new SelectList(ViewBag.RBCStatuses), "Select RBC Status", new { @class = "form-control" })
+                <span asp-validation-for="PatientRBCStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientPlateletesStatus" class="control-label"></label>
+                @Html.DropDownListFor(model => model.PatientPlateletesStatus, new SelectList(ViewBag.Plateletes), "Select Plateletes Status", new { @class = "form-control" })
+                <span asp-validation-for="PatientPlateletesStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientParasitesStatus" class="control-label"></label>
+                <input asp-for="PatientParasitesStatus" class="form-control" />
+                <span asp-validation-for="PatientParasitesStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientBS" class="control-label"></label>
+                <input asp-for="PatientBS" class="form-control" />
+                <span asp-validation-for="PatientBS" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="PatientCreatinine" class="control-label"></label>
+                <input asp-for="PatientCreatinine" class="form-control" />
+                <span asp-validation-for="PatientCreatinine" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-8">
+                <input type="submit" value="Create" class="btn btn-primary" asp-action="GenerateReport" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="ViewAllReports">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

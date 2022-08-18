@@ -1,0 +1,62 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@model IPagedList<Sai_Raj_Laboratory.Models.Report>
+@using X.PagedList.Web.Common;
+@using X.PagedList.Mvc.Bootstrap4.Core;
+@{
+    ViewData["Title"] = "ViewAllReports";
+}
+
+<h1>ViewAllReports</h1>
+<p>
+    <a asp-action="CreateReport" asp-controller="Home">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PatientId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PatientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PatientAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PatientSex)
+            </th>
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientAge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientSex)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PatientId }, new { @class = "btn btn-dark" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PatientId }, new { @class = "btn btn-info" }) |
+                    @{string link = "/PrintReport/" + item.PatientId;
+                    }
+                    <a class="btn btn-warning" href=@link target="_blank">Print</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="col-md-8 offset-md-2">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("ViewAllReports", "Home", new { page }),Bootstrap4PagedListRenderOptions.ClassicPlusFirstAndLast)
+</div>

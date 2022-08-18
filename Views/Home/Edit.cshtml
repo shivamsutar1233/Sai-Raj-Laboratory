@@ -1,0 +1,125 @@
+﻿@model Sai_Raj_Laboratory.Models.Report
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Report</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditReport">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PatientId" />
+            <div class="form-group">
+                <label asp-for="PatientName" class="control-label"></label>
+                <input asp-for="PatientName" class="form-control" />
+                <span asp-validation-for="PatientName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UHID" class="control-label"></label>
+                <input asp-for="UHID" class="form-control" />
+                <span asp-validation-for="UHID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientAge" class="control-label"></label>
+                <input asp-for="PatientAge" class="form-control" />
+                <span asp-validation-for="PatientAge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientSex" class="control-label"></label>
+                <input asp-for="PatientSex" class="form-control" />
+                <span asp-validation-for="PatientSex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientHB" class="control-label"></label>
+                <input asp-for="PatientHB" class="form-control" />
+                <span asp-validation-for="PatientHB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientWBC" class="control-label"></label>
+                <input asp-for="PatientWBC" class="form-control" />
+                <span asp-validation-for="PatientWBC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientNeutrophils" class="control-label"></label>
+                <input asp-for="PatientNeutrophils" class="form-control" />
+                <span asp-validation-for="PatientNeutrophils" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PateintLymphocytes" class="control-label"></label>
+                <input asp-for="PateintLymphocytes" class="form-control" />
+                <span asp-validation-for="PateintLymphocytes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PateintEosinophils" class="control-label"></label>
+                <input asp-for="PateintEosinophils" class="form-control" />
+                <span asp-validation-for="PateintEosinophils" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientMonocytes" class="control-label"></label>
+                <input asp-for="PatientMonocytes" class="form-control" />
+                <span asp-validation-for="PatientMonocytes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientBasophils" class="control-label"></label>
+                <input asp-for="PatientBasophils" class="form-control" />
+                <span asp-validation-for="PatientBasophils" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientPlateletesCount" class="control-label"></label>
+                <input asp-for="PatientPlateletesCount" class="form-control" />
+                <span asp-validation-for="PatientPlateletesCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientWBCStatus" class="control-label"></label>
+                <input asp-for="PatientWBCStatus" class="form-control" />
+                <span asp-validation-for="PatientWBCStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientRBCStatus" class="control-label"></label>
+                <input asp-for="PatientRBCStatus" class="form-control" />
+                <span asp-validation-for="PatientRBCStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientPlateletesStatus" class="control-label"></label>
+                <input asp-for="PatientPlateletesStatus" class="form-control" />
+                <span asp-validation-for="PatientPlateletesStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientParasitesStatus" class="control-label"></label>
+                <input asp-for="PatientParasitesStatus" class="form-control" />
+                <span asp-validation-for="PatientParasitesStatus" class="text-danger"></span>
+            </div>
+            @if (Model.PatientBS != null)
+            {
+                <div class="form-group">
+                    <label asp-for="PatientBS" class="control-label"></label>
+                    <input asp-for="PatientBS" class="form-control" />
+                    <span asp-validation-for="PatientBS" class="text-danger"></span>
+                </div>
+            }
+            @if (Model.PatientCreatinine != null)
+            {
+                <div class="form-group">
+                    <label asp-for="PatientCreatinine" class="control-label"></label>
+                    <input asp-for="PatientCreatinine" class="form-control" />
+                    <span asp-validation-for="PatientCreatinine" class="text-danger"></span>
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ViewAllReports">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

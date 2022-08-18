@@ -1,0 +1,181 @@
+﻿@model Sai_Raj_Laboratory.Models.Report
+
+@{
+    ViewData["Title"] = "PrintReport";
+}
+
+
+<div style="margin-top:6cm; font-size:20px;" >
+    <hr />
+
+
+    <div class="form-row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientName):
+        </dt>
+        <dd class="col-sm-6 pl-1">
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+        <dd class="col-sm-4 pl-1">
+            <label><b>Date:</b> @DateTime.Today.ToShortDateString()</label>
+        </dd>
+        <dt class="col-sm-1.5">
+            @Html.DisplayNameFor(model => model.PatientAge):
+        </dt>
+        <dd class="col-sm-1">
+            @Html.DisplayFor(model => model.PatientAge)
+        </dd>
+        <dt class="col-sm-1.5">
+            @Html.DisplayNameFor(model => model.PatientSex):
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.PatientSex)
+        </dd>
+        <dt class="col-sm-1 ml-2">
+            @Html.DisplayNameFor(model => model.UHID):
+        </dt>
+        <dd class="col-sm-3">
+            @Html.DisplayFor(model => model.UHID)
+        </dd>
+        <dt class="col-sm-1.5">
+            <label><b>Ref. by:</b></label>
+        </dt>
+        <dd class="col-sm-5">
+            <ol class="pl-2">
+                <li><i>Dr. Raosaheb S. Gulve M.B.B.S.D.Ortho</i></li>
+                <li><i>Dr. Manisha R. Gulve B.H.M.S</i></li>
+            </ol>
+        </dd>
+    </div>
+    <hr />
+    <table style="width:100%">
+        <thead>
+            <tr style="height:60px;">
+                <th style="width:30%"><b>Test</b></th>
+                <th style="width:30%"><b>Observed Value</b></th>
+                <th style="width:40%"><b>Normal Range</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="height:60px;">
+                <td style="width:30%"><b>Hemoglobin</b></td>
+                <td style="width:30%">@Html.DisplayFor(model => model.PatientHB)</td>
+                <td style="width:40%">Male: 12-17 gm%</td>
+            </tr>
+            <tr">
+                <td style="width:30%"><b></b></td>
+                <td style="width:30%"></td>
+                <td style="width:40%">Female: 11-15gm%</td>
+                </tr>
+                <tr style="height:60px;">
+                    <td style="width:30%"><b>Total WBC Count</b></td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PatientWBC)</td>
+                    <td style="width:40%">4000-11000/cumm</td>
+                </tr>
+                <tr style="height:60px;">
+                    <td style="width:30%"><b>Differential Count</b></td>
+                    <td style="width:30%"></td>
+                    <td style="width:40%"></td>
+                </tr>
+                <tr>
+                    <td style="width:30%">Neutrophils</td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PatientNeutrophils)</td>
+                    <td style="width:40%">40-70%</td>
+                </tr>
+                <tr>
+                    <td style="width:30%">Lymphocytes</td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PateintLymphocytes)</td>
+                    <td style="width:40%">20-40%</td>
+                </tr>
+                <tr>
+                    <td style="width:30%">Eosinophils</td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PateintEosinophils)</td>
+                    <td style="width:40%">2-6%</td>
+                </tr>
+                <tr>
+                    <td style="width:30%">Monocytes</td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PatientMonocytes)</td>
+                    <td style="width:40%">1-5%</td>
+                </tr>
+                <tr>
+                    <td style="width:30%">Basophils</td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PatientBasophils)</td>
+                    <td style="width:40%">0-1%</td>
+                </tr>
+                <tr style="height:60px;">
+                    <td style="width:30%"><b>Platelates Count</b></td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PatientPlateletesCount)</td>
+                    <td style="width:40%">1.50-4.50 Lakhs/cumm</td>
+                </tr>
+                <tr style="height:60px;">
+                    <td style="width:30%"><b>Microscopic Examination:</b></td>
+                    <td style="width:30%"></td>
+                    <td style="width:40%"></td>
+                </tr>
+                <tr>
+                    <td style="width:30%">WBC</td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PatientWBC)</td>
+                    <td style="width:40%"></td>
+                </tr>
+                <tr>
+                    <td style="width:30%">RBC</td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PatientRBCStatus)</td>
+                    <td style="width:40%"></td>
+                </tr>
+                <tr>
+                    <td style="width:30%">Platelates</td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PatientPlateletesStatus)</td>
+                    <td style="width:40%"></td>
+                </tr>
+                <tr>
+                    <td style="width:30%">Parasites</td>
+                    <td style="width:30%">@Html.DisplayFor(model => model.PatientParasitesStatus)</td>
+                    <td style="width:40%"></td>
+                </tr>
+                <tr>
+                    <td style="width:30%"></td>
+                    <td style="width:30%"></td>
+                    <td style="width:40%"></td>
+                </tr>
+                <tr style="height:80px;">
+                    <td style="width:30%"><b>E.S.R.</b></td>
+                    <td style="width:30%">mms at the end of 1Hr.</td>
+                    <td style="width:40%">Male > 0-15mms</td>
+                </tr>
+                <tr>
+                    <td style="width:30%"></td>
+                    <td style="width:30%"></td>
+                    <td style="width:40%">Male > 0-20mms</td>
+                </tr>
+                @if (Model.PatientBS != null)
+                {
+                    <tr style="height:60px;">
+                        <td style="width:30%"><b>Blood Sugar(R)</b></td>
+                        <td style="width:30%"><b>@Html.DisplayFor(model => model.PatientBS) mg/dl</b></td>
+                        <td style="width:40%"><b>Upto 150 mg/dl</b></td>
+                    </tr>
+                }
+                @if (Model.PatientCreatinine != null)
+                {
+                    <tr style="height:60px;">
+                        <td style="width:30%"><b>Sr. Creatinine</b></td>
+                        <td style="width:30%"><b>@Html.DisplayFor(model => model.PatientCreatinine) mg/dl</b></td>
+                        <td style="width:40%"><b>0.6 - 1.4 mg/dl</b></td>
+                    </tr>
+                }
+        </tbody>
+    </table>
+    <hr />
+    @if (Model.PatientBS != null)
+    {
+        <div>
+            <label class="float-right" style="margin-top:25px;">Medical Lab Technologist</label>
+        </div>
+    }
+    else {
+        <div>
+            <label class="float-right" style="margin-top:140px;">Medical Lab Technologist</label>
+        </div>
+    }
+   
+</div>

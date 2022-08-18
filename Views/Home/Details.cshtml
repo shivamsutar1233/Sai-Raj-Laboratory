@@ -1,0 +1,138 @@
+﻿@model Sai_Raj_Laboratory.Models.Report
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Report</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UHID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UHID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientAge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientAge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientSex)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientSex)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientHB)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientHB)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientWBC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientWBC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientNeutrophils)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientNeutrophils)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PateintLymphocytes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PateintLymphocytes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PateintEosinophils)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PateintEosinophils)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientMonocytes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientMonocytes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientBasophils)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientBasophils)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientPlateletesCount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientPlateletesCount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientWBCStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientWBCStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientRBCStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientRBCStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientPlateletesStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientPlateletesStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientParasitesStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientParasitesStatus)
+        </dd>
+        @if (Model.PatientBS != null)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PatientBS)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PatientBS)
+            </dd>
+        }
+        @if (Model.PatientCreatinine != null)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PatientCreatinine)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PatientCreatinine)
+            </dd>
+        }
+    </dl>
+</div>
+<div>
+@*    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    <a asp-action="ViewAllReports">Back to List</a>
+</div>
